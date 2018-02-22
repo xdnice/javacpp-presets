@@ -21,7 +21,8 @@ patch -Np1 < ../../../arpack-ng.patch # https://github.com/opencollab/arpack-ng/
 if [[ "${ACLOCAL_PATH:-}" == C:\\msys64\\* ]]; then
     export ACLOCAL_PATH=/mingw64/share/aclocal:/usr/share/aclocal
 fi
-bash bootstrap
+patch -Np1 < ../../../arpack-ng-configure.patch || true # bash bootstrap
+chmod 755 configure
 
 OPENBLAS_PATH="$INSTALL_PATH/../../../openblas/cppbuild/$PLATFORM/"
 

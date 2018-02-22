@@ -103,7 +103,7 @@ if [ "$TRAVIS_OS_NAME" == "osx" ]; then
    echo "performing brew update and install of dependencies, please wait.."
    brew update > /dev/null
    brew upgrade maven
-   brew install gcc swig libtool libusb nasm yasm xz sdl
+   brew install gcc@6 swig libtool libusb nasm yasm xz sdl
    brew link --overwrite gcc
 
    mvn -version
